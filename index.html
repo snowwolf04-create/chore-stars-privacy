@@ -25,7 +25,19 @@
     margin:0; background:var(--cream); color:var(--ink);
     font:16px/1.65 var(--body); -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:720px; margin:0 auto; padding:48px 22px 80px}
+  .wrap{max-width:720px; margin:0 auto; padding:26px 22px 80px}
+
+  /* A way back out: arriving here from the app store or a footer link would
+     otherwise be a dead end. */
+  .back{
+    display:inline-flex; align-items:center; gap:7px; text-decoration:none;
+    color:var(--muted); font:600 14.5px var(--body); padding:8px 12px 8px 8px;
+    border-radius:10px; margin-bottom:14px;
+  }
+  .back:hover{color:var(--teal); background:var(--teal-soft)}
+  .back span{font-size:17px; line-height:1}
+  .marklink{display:inline-block; border-radius:16px; text-decoration:none; flex:none}
+  .marklink:focus-visible{outline:3px solid var(--teal); outline-offset:4px}
 
   header{display:flex; align-items:center; gap:14px; margin-bottom:36px}
   /* The app's own mark, served from this same site — no third-party request. */
@@ -64,8 +76,12 @@
 <body>
 <div class="wrap">
 
+  <a class="back" href="https://chore-stars.com"><span>&larr;</span> Back to Chore Stars</a>
+
   <header>
-    <img class="mark" src="icon.png" alt="" width="56" height="56">
+    <a class="marklink" href="https://chore-stars.com" aria-label="Chore Stars home">
+      <img class="mark" src="icon.png" alt="Chore Stars" width="56" height="56">
+    </a>
     <div class="brand">Chore Stars<span>Privacy Policy</span></div>
   </header>
 
